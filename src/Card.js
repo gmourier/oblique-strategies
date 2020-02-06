@@ -7,6 +7,7 @@ class Card extends Component {
         this.state = {
             selectedCard: this.props.deck[this.randomRange(this.props.deck.length)]
         }
+        this.selectCard = this.selectCard.bind(this);
     }
     
     selectCard() {
@@ -21,7 +22,7 @@ class Card extends Component {
 
     render() {
         return (
-            <div className="card" onClick={this.selectCard.bind(this)}>
+            <div className="card" onClick={this.selectCard}>
                 {this.state.selectedCard.content}
             </div>
         )
