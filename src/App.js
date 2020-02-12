@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Card from './Card'
 
-const deck = require('../cards.json')
+const deck = require('../deck.json')
 
 class App extends Component {
     
