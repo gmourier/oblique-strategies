@@ -1,4 +1,4 @@
-# oblique-strategies
+# oblique-strategies [![Build Status](https://travis-ci.org/gmourier/oblique-strategies.svg?branch=master)](https://travis-ci.org/gmourier/oblique-strategies)
 React implementation of Brian Eno's Oblique Strategies cards
 
 ## Build
