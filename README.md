@@ -8,6 +8,7 @@ npm run build
 ```
 ## Test
 ```
+npm run test
 ```
 ## Resources
 [OBLIQUE STRATEGIES
