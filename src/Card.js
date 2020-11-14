@@ -5,11 +5,19 @@ class Card extends Component {
         super(props);
 
         this.state = {
-            selectedCard: this.props.deck[this.randomRange(this.props.deck.length)]
+            selectedCard: this.props.deck[this.randomRange(this.props.deck.length)],
+            refreshCard: this.props.refreshCard
         }
+
         this.selectCard = this.selectCard.bind(this);
     }
-    
+
+    componentDidUpdate(prevProps) {
+        if(this.props.refreshCard !== prevProps.refreshCard) {
+            this.selectCard()
+        }
+    } 
+
     selectCard() {
         this.setState({
             selectedCard: this.props.deck[this.randomRange(this.props.deck.length)]
