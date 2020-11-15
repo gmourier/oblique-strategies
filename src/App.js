@@ -16,9 +16,10 @@ class App extends Component {
 	}
 
 	selectLanguage(event) {
+    const selectedLanguage = event.target.value
 		this.setState({
-			selectedLanguage: event.target.value,
-			deck: require(`../assets/deck.${event.target.value}.json`),
+			selectedLanguage: selectedLanguage,
+			deck: require(`../assets/deck.${selectedLanguage}.json`),
 			refreshCard: true
 		})
 	}
@@ -26,7 +27,7 @@ class App extends Component {
 	render() {
 		return (
 			<div className="container">
-				<Card selectedLanguage={this.state.selectedLanguage} deck={this.state.deck} refreshCard={this.state.refreshCard} />
+				<Card deck={this.state.deck} refreshCard={this.state.refreshCard} />
 
 				<div className="radio">
 					<label>
