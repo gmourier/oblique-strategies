@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Card from './Card'
-
+import LanguageChoice from './LanguageChoice'
 
 class App extends Component {
 	constructor(props) {
@@ -16,7 +16,7 @@ class App extends Component {
 	}
 
 	selectLanguage(event) {
-    const selectedLanguage = event.target.value
+    	const selectedLanguage = event.target.getAttribute('lang')
 		this.setState({
 			selectedLanguage: selectedLanguage,
 			deck: require(`../assets/deck.${selectedLanguage}.json`),
@@ -28,31 +28,7 @@ class App extends Component {
 		return (
 			<div className="container">
 				<Card deck={this.state.deck} refreshCard={this.state.refreshCard} />
-
-				<div className="radio">
-					<label>
-            			<input 
-							type="radio"
-							id="enLang"
-							value="en" 
-							checked={this.state.selectedLanguage === 'en'} 
-							onChange={this.selectLanguage} 
-            			/>
-						En
-					</label>
-				</div>
-				<div className="radio">
-					<label>
-						<input
-							type="radio"
-							id="frLang"
-							value="fr" 
-							checked={this.state.selectedLanguage === 'fr'} 
-							onChange={this.selectLanguage} 
-            			/>
-						Fr
-					</label>
-				</div>
+				<LanguageChoice selectLanguage={this.selectLanguage} selectedLanguage={this.state.selectedLanguage} />
 			</div>
 		)
 	}
