@@ -2,7 +2,7 @@ import React from 'react';
 import Card from '../src/Card'
 import {shallow} from 'enzyme'
 
-const deck = require('../deck.json')
+const deck = require('../assets/deck.en.json')
 
 describe('Card component', () => {
   it('Card: renders correctly', () => {
