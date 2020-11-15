@@ -31,17 +31,25 @@ class App extends Component {
 
 				<div className="radio">
 					<label>
-						<input type="radio" value="en" 
-									checked={this.state.selectedLanguage === 'en'} 
-									onChange={this.selectLanguage} />
+            			<input 
+							type="radio"
+							id="enLang"
+							value="en" 
+							checked={this.state.selectedLanguage === 'en'} 
+							onChange={this.selectLanguage} 
+            			/>
 						En
 					</label>
 				</div>
 				<div className="radio">
 					<label>
-						<input type="radio" value="fr" 
-									checked={this.state.selectedLanguage === 'fr'} 
-									onChange={this.selectLanguage} />
+						<input
+							type="radio"
+							id="frLang"
+							value="fr" 
+							checked={this.state.selectedLanguage === 'fr'} 
+							onChange={this.selectLanguage} 
+            			/>
 						Fr
 					</label>
 				</div>
