@@ -1,23 +1,20 @@
 import React, { Component } from 'react'
 
+const languages = ['en', 'fr']
+
 class LanguageChoice extends Component {
     render() {
         return (
             <div className="languageChoice">
-                <a 
-                    lang="en" 
-                    className={this.props.selectedLanguage === 'en' ? `link-active` : ``}
-                    onClick={this.props.selectLanguage} 
-                >
-                    En
-                </a>
-                <a
-                    lang="fr" 
-                    className={this.props.selectedLanguage === 'fr' ? `link-active` : ``} 
-                    onClick={this.props.selectLanguage} 
-                >
-                    Fr
-                </a>
+                {languages.map((language) => (
+                    <a 
+                        lang={language} 
+                        className={this.props.selectedLanguage === language ? `link-active` : ``}
+                        onClick={this.props.selectLanguage} 
+                    >
+                        {language.toUpperCase()}
+                    </a>
+                ))}
             </div>
         )
     }
