@@ -12,7 +12,11 @@
     "type": "git",
     "url": "git+https://github.com/gmourier/oblique-strategies.git"
   },
-  "keywords": ["art", "music", "creativity"],
+  "keywords": [
+    "art",
+    "music",
+    "creativity"
+  ],
   "author": "@gmourier",
   "license": "ISC",
   "bugs": {
