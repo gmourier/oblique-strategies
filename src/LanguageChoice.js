@@ -10,7 +10,8 @@ class LanguageChoice extends Component {
                     <a 
                         lang={language} 
                         className={this.props.selectedLanguage === language ? `link-active` : ``}
-                        onClick={this.props.selectLanguage} 
+                        onClick={this.props.selectLanguage}
+                        key={language}
                     >
                         {language.toUpperCase()}
                     </a>
