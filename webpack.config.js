@@ -8,6 +8,10 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js'
   },
+  devServer: {
+    contentBase: path.join(__dirname, 'dist'),
+    hot: true
+  },
   module: {
     rules: [
       {
@@ -16,11 +20,19 @@ module.exports = {
         use: {
           loader: "babel-loader"
         }
+      },
+      {
+        test: /\.s[ac]ss$/i,
+        use: [
+          "style-loader",
+          "css-loader",
+          "sass-loader",
+        ],
       }
     ]
   },
   plugins: [new HtmlWebpackPlugin({
-    title: 'Oblique Strategies'
+    template: 'templates/index.html'
   })]
 };
 
