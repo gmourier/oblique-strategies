@@ -1,11 +1,12 @@
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 var path = require('path');
 
 module.exports = {
   mode: 'development',
-  entry: './src/main.js',
+  entry: './main.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'main.js'
+    filename: 'bundle.js'
   },
   module: {
     rules: [
@@ -18,6 +19,8 @@ module.exports = {
       }
     ]
   },
-  watch: true
+  plugins: [new HtmlWebpackPlugin({
+    title: 'Oblique Strategies'
+  })]
 };
 
